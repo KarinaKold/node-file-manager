@@ -17,46 +17,46 @@ export async function switchCommandDistributor(command) {
 
     switch (key) {
         case 'up':
-        await up();
+            await up();
         break;
         case 'cd':
-        await cd(arg);
+            await cd(arg);
         break;
         case 'ls':
-        await logDirectoryInfo();
+            await logDirectoryInfo();
         break;
         case 'cat':
-        await cat(arg);
+            await cat(arg);
         break;
         case 'add':
-        await add(arg);
+            await add(arg);
         break;
         case 'rn':
-        await rename(arg);
+            await rename(arg);
         break;
         case 'cp':
-        await copy(arg);
+            await copy(arg);
         break;
         case 'mv':
-        await copy(arg, 'move');
+            await copy(arg, 'move');
         break;
         case 'rm':
-        await del(arg);
+            await del(arg);
         break;
         case 'os':
-        osInformation(arg);
+            await osInformation(arg);
         break;
         case 'hash':
-        await hash(arg);
+            await hash(arg);
         break;
         case 'compress':
-        await compress(arg);
+            await compress(arg);
         break;
         case 'decompress':
-        await decompress(arg);
+            await decompress(arg);
         break;
 
         default:
-        throw new Error('error');
+            throw new Error('error');
     }
 }
