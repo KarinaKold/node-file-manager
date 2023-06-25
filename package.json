@@ -4,7 +4,8 @@
   "description": "This repository is the part of nodejs-assignments https://github.com/AlreadyBored/nodejs-assignments",
   "type": "module",
   "scripts": {
-    "start": "node ./src"
+    "start": "node src/index.js",
+    "start:user": "node src/index.js -- --username=your_username"
   },
   "repository": {
     "type": "git",
