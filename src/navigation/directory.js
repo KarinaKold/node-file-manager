@@ -5,12 +5,11 @@ const path = { path: os.homedir().toString() };
 
 export async function directory() {
     const files = await readdir(path.path, { withFileTypes: true });
-    const getFilesInfo = files
-    .map(el => ({
+
+    const getFilesInfo = files.map(el => ({
         name: el.name,
         type: el.isFile() ? 'file' : 'directory'
-    }))
-    .sort((a, b) => {
+    })).sort((a, b) => {
         if (a.type === b.type) {
             return a.name.localeCompare(b.name);
         } else {
