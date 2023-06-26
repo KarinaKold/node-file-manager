@@ -12,8 +12,4 @@ import { welcomeUser } from './greeting/welcomeUser.js';
 
 welcomeUser();
 
-function getPath() {
-    console.log(`\nYou are currently in ${currentPath.path}`);
-}
-
-getPath();
+console.log(`\nYou are currently in ${currentPath.path}`);

@@ -3,9 +3,8 @@ const { createHash } = await import('node:crypto');
 import { readFile } from 'fs/promises';
 import { join, extname, isAbsolute, dirname, basename } from 'path';
 
-const calculateHash = async () => {
-    const hash = createHash('sha256'); 
-    const fileReadStream = createReadStream(fileURL);
+export async function hash(arg) {
+    const hash = createHash('sha256');
 
     fileReadStream.on('readable', () => {
         const data = fileReadStream.read();
