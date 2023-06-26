@@ -1,0 +1,20 @@
+{
+  "name": "node-nodejs-basics",
+  "version": "1.0.0",
+  "description": "This repository is the part of nodejs-assignments https://github.com/AlreadyBored/nodejs-assignments",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:user": "node src/index.js -- --username=your_username"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlreadyBored/node-nodejs-basics.git"
+  },
+  "keywords": [
+    "nodejs",
+    "assignments"
+  ],
+  "author": "karinakold",
+  "license": "ISC"
+}
