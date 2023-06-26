@@ -1,6 +1,15 @@
 import { path, join, isAbsolute } from 'path';
 import os from 'os';
-import { directory } from './directory.js';
+import fs from 'fs/promises';
+
+export async function directoryPath(path) {
+    try {
+        const stats = await fs.stat(path);
+        return stats.directoryPath();
+    } catch (error) {
+        return false;
+    }
+}
 
 const currentPath = { path: os.homedir().toString() };
 
@@ -12,7 +21,7 @@ export async function cd(userPath) {
   const newPath = join(currentPath.path, userPath);
 
     if (isAbsolute(userPath)) {
-      if (await isDirectory(userPath)) {
+      if (await directoryPath(userPath)) {
         currentPath.path = userPath.slice(0, -1);
       } else {
         throw new Error('Error');
@@ -20,7 +29,7 @@ export async function cd(userPath) {
       return;
     }
 
-    if (await directory(newPath)) {
+    if (await directoryPath(newPath)) {
       currentPath.path = newPath.slice(0, -1);
     } else {
       throw new Error('Error');
